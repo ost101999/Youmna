@@ -17,6 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Cairo:wght@300;400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
+  <!-- Firebase Compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+
   <!-- Tailwind Custom Config -->
   <script>
     tailwind.config = {
@@ -193,7 +197,11 @@
           </div>
           <span class="font-serif font-bold text-navy-900 tracking-wide">Youmna Talaat</span>
         </div>
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3">
+          <button onclick="downloadHTML()" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 border border-slate-200" title="Download this page with all your custom text changes permanently saved in the file">
+            <i class="fa-solid fa-download"></i>
+            <span class="hidden sm:inline">Save File</span>
+          </button>
           <button onclick="resetEdits()" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 border border-slate-200" title="Reset all custom text changes to default">
             <i class="fa-solid fa-arrow-rotate-left"></i>
             <span class="hidden sm:inline">Reset</span>
@@ -259,7 +267,7 @@
                   <span class="text-[9px] uppercase tracking-wider text-slate-400 mt-1">Profile Photo</span>
                 </div>
               </div>
-              <div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-navy-900 text-white flex items-center justify-center text-xs shadow-md border border-white no-print" title="Place 'profile.jpg' in 'Pic' directory to display photo">
+              <div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-navy-950 text-white flex items-center justify-center text-xs shadow-md border border-white no-print" title="Place 'profile.jpg' in 'Pic' directory to display photo">
                 <i class="fa-solid fa-camera"></i>
               </div>
             </div>
@@ -592,6 +600,10 @@
           <span class="font-amiri font-bold text-navy-900 tracking-wide text-xl">يمنى طلعت</span>
         </div>
         <div class="flex items-center space-x-4 space-x-reverse">
+          <button onclick="downloadHTML()" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 border border-slate-200" title="تحميل ملف السيرة الذاتية مع حفظ التعديلات داخله نهائياً">
+            <i class="fa-solid fa-download"></i>
+            <span class="hidden sm:inline">تحميل كملف HTML</span>
+          </button>
           <button onclick="resetEdits()" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 border border-slate-200" title="إعادة تعيين كافة التعديلات النصية إلى الأصل">
             <i class="fa-solid fa-arrow-rotate-left"></i>
             <span class="hidden sm:inline">إعادة تعيين</span>
@@ -1054,11 +1066,29 @@
 
     let currentLang = 'en';
     let currentCertIndex = 0;
+    window.isEditingEnabled = false;
+
+    // Firebase configuration matching "كتاب التأسيس - مسموع" (audio-foundation-book)
+    const firebaseConfig = {
+      apiKey: "AIzaSyBzhGlkfBG3iob4NdkA5zPd3dRqNq4ju7g",
+      authDomain: "audio-foundation-book.firebaseapp.com",
+      projectId: "audio-foundation-book",
+      storageBucket: "audio-foundation-book.firebasestorage.app",
+      messagingSenderId: "132959327913",
+      appId: "1:132959327913:web:c92564d98fc635a73abbb8",
+      measurementId: "G-07PXFNVPYV"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 
     // Load active language and saved content on initialization
-    window.addEventListener('DOMContentLoaded', () => {
-      loadEdits();
+    window.addEventListener('DOMContentLoaded', async () => {
+      // 1. First, load edits from local and sync with Firestore
+      await loadEdits();
       
+      // 2. Load preferred language
       const savedLang = localStorage.getItem('youmna_cv_lang');
       if (savedLang) {
         setLanguage(savedLang);
@@ -1067,21 +1097,42 @@
         document.getElementById('language-selector').style.display = 'flex';
       }
 
-      // Build grids only if they are not loaded/populated from saved localStorage
+      // 3. Build grids only if they are not loaded/populated
       const gridEn = document.getElementById('certificate-grid-en');
       if (gridEn && gridEn.children.length === 0) {
         buildGrids();
       }
+
+      // 4. Check if Admin parameters are provided in URL
+      checkAdmin();
     });
 
-    function loadEdits() {
+    async function loadEdits() {
+      // Fast load from localStorage first for zero-latency load
       const savedEn = localStorage.getItem('youmna_cv_en_content');
       const savedAr = localStorage.getItem('youmna_cv_ar_content');
-      if (savedEn) {
-        document.getElementById('cv-en').innerHTML = savedEn;
-      }
-      if (savedAr) {
-        document.getElementById('cv-ar').innerHTML = savedAr;
+      if (savedEn) document.getElementById('cv-en').innerHTML = savedEn;
+      if (savedAr) document.getElementById('cv-ar').innerHTML = savedAr;
+
+      // Sync and download the latest data from Cloud Firestore
+      try {
+        const docRef = db.collection("cv").doc("youmna-cv");
+        const docSnap = await docRef.get();
+        if (docSnap.exists) {
+          const data = docSnap.data();
+          if (data) {
+            if (data.en) {
+              document.getElementById('cv-en').innerHTML = data.en;
+              localStorage.setItem('youmna_cv_en_content', data.en);
+            }
+            if (data.ar) {
+              document.getElementById('cv-ar').innerHTML = data.ar;
+              localStorage.setItem('youmna_cv_ar_content', data.ar);
+            }
+          }
+        }
+      } catch (e) {
+        console.error("Failed to fetch edits from Firestore:", e);
       }
     }
 
@@ -1090,9 +1141,31 @@
       const arCv = document.getElementById('cv-ar');
       if (enCv) localStorage.setItem('youmna_cv_en_content', enCv.innerHTML);
       if (arCv) localStorage.setItem('youmna_cv_ar_content', arCv.innerHTML);
+      
+      // Save online if we are logged in as admin
+      if (window.isEditingEnabled) {
+        saveEditsToFirebase();
+      }
     }
 
-    function resetEdits() {
+    async function saveEditsToFirebase() {
+      const enCv = document.getElementById('cv-en');
+      const arCv = document.getElementById('cv-ar');
+      const data = {
+        en: enCv ? enCv.innerHTML : "",
+        ar: arCv ? arCv.innerHTML : "",
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+      try {
+        const docRef = db.collection("cv").doc("youmna-cv");
+        await docRef.set(data, { merge: true });
+        console.log("Saved successfully to Firestore under cv/youmna-cv");
+      } catch (e) {
+        console.error("Firestore sync failed:", e);
+      }
+    }
+
+    async function resetEdits() {
       const confirmMsg = (currentLang === 'en') 
         ? 'Are you sure you want to reset all custom edits to the original default CV?'
         : 'هل أنت متأكد من رغبتك في إعادة تعيين كافة التعديلات إلى السيرة الذاتية الأصلية؟';
@@ -1100,7 +1173,64 @@
       if (confirm(confirmMsg)) {
         localStorage.removeItem('youmna_cv_en_content');
         localStorage.removeItem('youmna_cv_ar_content');
+        
+        if (window.isEditingEnabled) {
+          try {
+            const docRef = db.collection("cv").doc("youmna-cv");
+            await docRef.delete();
+          } catch(e) {
+            console.error("Failed to delete Firestore document:", e);
+          }
+        }
         window.location.reload();
+      }
+    }
+
+    function downloadHTML() {
+      const docType = "<!DOCTYPE html>\n";
+      const htmlContent = docType + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'index.html';
+      a.click();
+    }
+
+    function checkAdmin() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('admin')) {
+        let isAuthorized = sessionStorage.getItem('youmna_cv_admin') === 'true';
+        if (!isAuthorized) {
+          const password = prompt(currentLang === 'en' ? 'Enter Admin Password:' : 'أدخل كلمة مرور الإدارة:');
+          if (password === 'youmna2026') {
+            sessionStorage.setItem('youmna_cv_admin', 'true');
+            isAuthorized = true;
+          }
+        }
+        
+        if (isAuthorized) {
+          window.isEditingEnabled = true;
+          showAdminIndicator();
+        } else {
+          alert(currentLang === 'en' ? 'Incorrect Password. View-only mode.' : 'كلمة المرور خاطئة. وضع القراءة فقط.');
+        }
+      }
+    }
+
+    function showAdminIndicator() {
+      const brandEn = document.querySelector('#cv-en nav .tracking-wide');
+      if (brandEn) {
+        const ind = document.createElement('span');
+        ind.className = 'inline-flex items-center ml-2 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 no-print';
+        ind.textContent = 'Admin Mode';
+        brandEn.parentNode.appendChild(ind);
+      }
+      const brandAr = document.querySelector('#cv-ar nav .tracking-wide');
+      if (brandAr) {
+        const ind = document.createElement('span');
+        ind.className = 'inline-flex items-center mr-2 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 no-print';
+        ind.textContent = 'وضع الإدارة';
+        brandAr.parentNode.appendChild(ind);
       }
     }
 
@@ -1296,6 +1426,9 @@
 
     // Double-click inline text editor
     document.addEventListener('dblclick', function(e) {
+      // Only allow editing if Admin Mode is authorized and active
+      if (!window.isEditingEnabled) return;
+
       // Avoid interactive elements, images, buttons, and elements inside modals/selector
       if (
         e.target.tagName === 'BUTTON' || 
