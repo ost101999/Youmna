@@ -179,20 +179,6 @@
     </button>
   </div>
 
-  <!-- ================= TOAST NOTIFICATION (INLINE EDIT MODE) ================= -->
-  <div id="edit-toast" class="no-print fixed bottom-6 left-6 z-40 bg-navy-950 text-white px-4 py-3 rounded-xl border border-slate-800 shadow-2xl flex items-center space-x-3 transition-all duration-500 translate-y-12 opacity-0 pointer-events-none max-w-sm">
-    <div class="w-8 h-8 rounded-full bg-blue-500/20 text-accent-blue flex items-center justify-center shrink-0">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </div>
-    <div class="text-xs">
-      <p id="toast-text-en" class="hidden font-medium text-left"><strong>Pro Tip:</strong> Double-click any text to edit, add, or remove details directly on the page.</p>
-      <p id="toast-text-ar" class="hidden font-semibold font-cairo text-right"><strong>تلميح:</strong> اضغط مرتين على أي نص لتعديله، إضافته، أو حذفه مباشرة في الصفحة.</p>
-    </div>
-    <button onclick="dismissToast()" class="text-slate-400 hover:text-white shrink-0 pl-2">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-  </div>
-
 
   <!-- ============================================================= -->
   <!-- ===================== ENGLISH VERSION ======================= -->
@@ -208,6 +194,10 @@
           <span class="font-serif font-bold text-navy-900 tracking-wide">Youmna Talaat</span>
         </div>
         <div class="flex items-center space-x-4">
+          <button onclick="resetEdits()" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 border border-slate-200" title="Reset all custom text changes to default">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <span class="hidden sm:inline">Reset</span>
+          </button>
           <button onclick="window.print()" class="flex items-center space-x-2 bg-navy-900 hover:bg-navy-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
             <i class="fa-solid fa-print"></i>
             <span>Print / Save as PDF</span>
@@ -602,6 +592,10 @@
           <span class="font-amiri font-bold text-navy-900 tracking-wide text-xl">يمنى طلعت</span>
         </div>
         <div class="flex items-center space-x-4 space-x-reverse">
+          <button onclick="resetEdits()" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 border border-slate-200" title="إعادة تعيين كافة التعديلات النصية إلى الأصل">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <span class="hidden sm:inline">إعادة تعيين</span>
+          </button>
           <button onclick="window.print()" class="flex items-center space-x-2 bg-navy-900 hover:bg-navy-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
             <i class="fa-solid fa-print"></i>
             <span>طباعة / حفظ كملف PDF</span>
@@ -1061,8 +1055,10 @@
     let currentLang = 'en';
     let currentCertIndex = 0;
 
-    // Load active language on initialization
+    // Load active language and saved content on initialization
     window.addEventListener('DOMContentLoaded', () => {
+      loadEdits();
+      
       const savedLang = localStorage.getItem('youmna_cv_lang');
       if (savedLang) {
         setLanguage(savedLang);
@@ -1070,8 +1066,43 @@
         // Show Selector Modal
         document.getElementById('language-selector').style.display = 'flex';
       }
-      buildGrids();
+
+      // Build grids only if they are not loaded/populated from saved localStorage
+      const gridEn = document.getElementById('certificate-grid-en');
+      if (gridEn && gridEn.children.length === 0) {
+        buildGrids();
+      }
     });
+
+    function loadEdits() {
+      const savedEn = localStorage.getItem('youmna_cv_en_content');
+      const savedAr = localStorage.getItem('youmna_cv_ar_content');
+      if (savedEn) {
+        document.getElementById('cv-en').innerHTML = savedEn;
+      }
+      if (savedAr) {
+        document.getElementById('cv-ar').innerHTML = savedAr;
+      }
+    }
+
+    function saveEdits() {
+      const enCv = document.getElementById('cv-en');
+      const arCv = document.getElementById('cv-ar');
+      if (enCv) localStorage.setItem('youmna_cv_en_content', enCv.innerHTML);
+      if (arCv) localStorage.setItem('youmna_cv_ar_content', arCv.innerHTML);
+    }
+
+    function resetEdits() {
+      const confirmMsg = (currentLang === 'en') 
+        ? 'Are you sure you want to reset all custom edits to the original default CV?'
+        : 'هل أنت متأكد من رغبتك في إعادة تعيين كافة التعديلات إلى السيرة الذاتية الأصلية؟';
+      
+      if (confirm(confirmMsg)) {
+        localStorage.removeItem('youmna_cv_en_content');
+        localStorage.removeItem('youmna_cv_ar_content');
+        window.location.reload();
+      }
+    }
 
     function setLanguage(lang) {
       currentLang = lang;
@@ -1106,46 +1137,11 @@
         document.getElementById('modal-label').textContent = 'عرض المستند المرفق';
         document.getElementById('modal-keys-help').innerHTML = '<i class="fa-solid fa-keyboard mr-1"></i> استخدم الأسهم اليمين/اليسار للتنقل، وزر Esc للإغلاق';
       }
-
-      // Show editor instruction toast
-      showToast();
     }
 
     function toggleLanguage() {
       const newLang = (currentLang === 'en') ? 'ar' : 'en';
       setLanguage(newLang);
-    }
-
-    // Show Instruction Toast for Double Click Editor
-    function showToast() {
-      const toast = document.getElementById('edit-toast');
-      const textEn = document.getElementById('toast-text-en');
-      const textAr = document.getElementById('toast-text-ar');
-      
-      if (currentLang === 'en') {
-        textEn.classList.remove('hidden');
-        textAr.classList.add('hidden');
-      } else {
-        textAr.classList.remove('hidden');
-        textEn.classList.add('hidden');
-      }
-      
-      // Slide up and fade in
-      toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
-      toast.classList.add('translate-y-0', 'opacity-100');
-      
-      // Auto dismiss after 7 seconds
-      setTimeout(dismissToast, 7000);
-    }
-    
-    function dismissToast() {
-      const toast = document.getElementById('edit-toast');
-      if (toast) {
-        toast.classList.add('opacity-0', 'translate-y-12');
-        setTimeout(() => {
-          toast.classList.add('pointer-events-none');
-        }, 500);
-      }
     }
 
     // Build the Grid Cards for both English and Arabic
@@ -1323,10 +1319,11 @@
       // Add a nice visual indicator
       el.classList.add('ring-2', 'ring-accent-blue', 'outline-none', 'rounded', 'p-1', 'bg-blue-50/30', 'transition-all');
       
-      // Disable edit mode on blur
+      // Disable edit mode and save on blur
       el.addEventListener('blur', function() {
         el.contentEditable = "false";
         el.classList.remove('ring-2', 'ring-accent-blue', 'outline-none', 'rounded', 'p-1', 'bg-blue-50/30', 'transition-all');
+        saveEdits();
       }, { once: true });
       
       // Submit edit on Enter (allow Shift+Enter for newlines)
