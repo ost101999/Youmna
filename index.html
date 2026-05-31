@@ -1060,9 +1060,9 @@
     const db = firebase.firestore();
 
     // Load active language and saved content on initialization
-    window.addEventListener('DOMContentLoaded', async () => {
-      // 1. First, load edits from local and sync with Firestore
-      await loadEdits();
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. First, start realtime sync with Firestore (loads local data first internally)
+      startRealtimeSync();
       
       // 2. Load preferred language
       const savedLang = localStorage.getItem('youmna_cv_lang');
@@ -1083,32 +1083,39 @@
       checkAdmin();
     });
 
-    async function loadEdits() {
+    function startRealtimeSync() {
       // Fast load from localStorage first for zero-latency load
       const savedEn = localStorage.getItem('youmna_cv_en_content');
       const savedAr = localStorage.getItem('youmna_cv_ar_content');
       if (savedEn) document.getElementById('cv-en').innerHTML = savedEn;
       if (savedAr) document.getElementById('cv-ar').innerHTML = savedAr;
 
-      // Sync and download the latest data from Cloud Firestore
+      // Sync and download the latest data from Cloud Firestore in real-time
       try {
         const docRef = db.collection("books").doc("youmna-cv");
-        const docSnap = await docRef.get();
-        if (docSnap.exists) {
-          const data = docSnap.data();
-          if (data) {
-            if (data.en) {
-              document.getElementById('cv-en').innerHTML = data.en;
-              localStorage.setItem('youmna_cv_en_content', data.en);
-            }
-            if (data.ar) {
-              document.getElementById('cv-ar').innerHTML = data.ar;
-              localStorage.setItem('youmna_cv_ar_content', data.ar);
+        docRef.onSnapshot((docSnap) => {
+          if (docSnap.exists) {
+            const data = docSnap.data();
+            if (data) {
+              // Only update DOM if the user is not actively editing text
+              const isUserEditing = document.activeElement && document.activeElement.contentEditable === "true";
+              if (!isUserEditing) {
+                if (data.en && document.getElementById('cv-en').innerHTML !== data.en) {
+                  document.getElementById('cv-en').innerHTML = data.en;
+                  localStorage.setItem('youmna_cv_en_content', data.en);
+                }
+                if (data.ar && document.getElementById('cv-ar').innerHTML !== data.ar) {
+                  document.getElementById('cv-ar').innerHTML = data.ar;
+                  localStorage.setItem('youmna_cv_ar_content', data.ar);
+                }
+              }
             }
           }
-        }
+        }, (e) => {
+          console.error("Failed to fetch edits from Firestore:", e);
+        });
       } catch (e) {
-        console.error("Failed to fetch edits from Firestore:", e);
+        console.error("Firestore snap listener failed:", e);
       }
     }
 
