@@ -1185,24 +1185,6 @@
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.has('admin')) {
         window.isEditingEnabled = true;
-        showAdminIndicator();
-      }
-    }
-
-    function showAdminIndicator() {
-      const brandEn = document.querySelector('#cv-en nav .tracking-wide');
-      if (brandEn) {
-        const ind = document.createElement('span');
-        ind.className = 'inline-flex items-center ml-2 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 no-print';
-        ind.textContent = 'Admin Mode';
-        brandEn.parentNode.appendChild(ind);
-      }
-      const brandAr = document.querySelector('#cv-ar nav .tracking-wide');
-      if (brandAr) {
-        const ind = document.createElement('span');
-        ind.className = 'inline-flex items-center mr-2 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 no-print';
-        ind.textContent = 'وضع الإدارة';
-        brandAr.parentNode.appendChild(ind);
       }
     }
 
