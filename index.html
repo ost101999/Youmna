@@ -1084,9 +1084,22 @@
     });
 
     function startRealtimeSync() {
+      // Helper to strip any admin indicator spans from HTML
+      function cleanHTML(htmlStr) {
+        if (!htmlStr) return "";
+        const temp = document.createElement('div');
+        temp.innerHTML = htmlStr;
+        temp.querySelectorAll('span').forEach(span => {
+          if (span.textContent.includes('Admin Mode') || span.textContent.includes('وضع الإدارة')) {
+            span.remove();
+          }
+        });
+        return temp.innerHTML;
+      }
+
       // Fast load from localStorage first for zero-latency load
-      const savedEn = localStorage.getItem('youmna_cv_en_content');
-      const savedAr = localStorage.getItem('youmna_cv_ar_content');
+      const savedEn = cleanHTML(localStorage.getItem('youmna_cv_en_content'));
+      const savedAr = cleanHTML(localStorage.getItem('youmna_cv_ar_content'));
       if (savedEn) document.getElementById('cv-en').innerHTML = savedEn;
       if (savedAr) document.getElementById('cv-ar').innerHTML = savedAr;
 
@@ -1100,13 +1113,27 @@
               // Only update DOM if the user is not actively editing text
               const isUserEditing = document.activeElement && document.activeElement.contentEditable === "true";
               if (!isUserEditing) {
-                if (data.en && document.getElementById('cv-en').innerHTML !== data.en) {
-                  document.getElementById('cv-en').innerHTML = data.en;
-                  localStorage.setItem('youmna_cv_en_content', data.en);
+                const cleanedEn = cleanHTML(data.en);
+                const cleanedAr = cleanHTML(data.ar);
+
+                if (cleanedEn && document.getElementById('cv-en').innerHTML !== cleanedEn) {
+                  document.getElementById('cv-en').innerHTML = cleanedEn;
+                  localStorage.setItem('youmna_cv_en_content', cleanedEn);
                 }
-                if (data.ar && document.getElementById('cv-ar').innerHTML !== data.ar) {
-                  document.getElementById('cv-ar').innerHTML = data.ar;
-                  localStorage.setItem('youmna_cv_ar_content', data.ar);
+                if (cleanedAr && document.getElementById('cv-ar').innerHTML !== cleanedAr) {
+                  document.getElementById('cv-ar').innerHTML = cleanedAr;
+                  localStorage.setItem('youmna_cv_ar_content', cleanedAr);
+                }
+
+                // If remote data contained admin indicators, clean it up on Firebase
+                if (window.isEditingEnabled && (data.en !== cleanedEn || data.ar !== cleanedAr)) {
+                  docRef.set({
+                    en: cleanedEn,
+                    ar: cleanedAr,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                  }, { merge: true }).then(() => {
+                    console.log("Firestore document cleaned of admin indicators.");
+                  });
                 }
               }
             }
