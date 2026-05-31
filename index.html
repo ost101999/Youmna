@@ -1,3 +1,1458 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youmna Sherif Talaat - Quran & Tajweed Tutor CV | يمنى شريف طلعت - معلمة قرآن وتجويد</title>
+  <meta name="description" content="Professional Resume of Youmna Sherif Talaat - Quran and Tajweed Tutor | السيرة الذاتية المهنية ليمنى شريف طلعت - معلمة القرآن الكريم والتجويد">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: English (Inter & Merriweather) | Arabic (Cairo & Amiri) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Cairo:wght@300;400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Firebase Compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f0f4f8',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            accent: {
+              teal: '#0d9488', // Spiritual, elegant Quranic theme green-teal
+              blue: '#2563eb', // Academic, trustworthy blue
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+            cairo: ['Cairo', 'sans-serif'],
+            amiri: ['Amiri', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles & Print Optimization -->
+  <style>
+    /* Custom CSS Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Prevent text selection highlight issues */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* fadeInUp keyframes and animation classes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-150 { animation-delay: 150ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-250 { animation-delay: 250ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-350 { animation-delay: 350ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .delay-500 { animation-delay: 500ms; }
+
+    /* Print styling rules */
+    @media print {
+      body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 11px;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-shadow-none {
+        box-shadow: none !important;
+      }
+      .print-border {
+        border: 1px solid #e2e8f0 !important;
+      }
+      /* Prevent page splits inside paragraphs/cards */
+      .page-break-avoid {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      /* Grid adjustments for print */
+      .print-grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+      .print-w-full {
+        width: 100% !important;
+      }
+      .print-flex-row {
+        flex-direction: row !important;
+      }
+      .print-margin-none {
+        margin: 0 !important;
+        padding: 0.5rem !important;
+      }
+      /* Force display color fills on printing */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen selection:bg-accent-blue selection:text-white antialiased">
+
+  <!-- ================= LANGUAGE SELECTOR OVERLAY ================= -->
+  <div id="language-selector" class="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-500">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 max-w-lg w-full overflow-hidden p-6 md:p-8 transform transition-transform duration-300 scale-100 text-center relative">
+      <!-- Decorative pattern -->
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-accent-blue via-accent-teal to-emerald-500"></div>
+      
+      <div class="w-16 h-16 rounded-full bg-navy-50 flex items-center justify-center mx-auto mb-4 text-navy-900">
+        <i class="fa-solid fa-language text-3xl text-accent-blue animate-pulse"></i>
+      </div>
+      
+      <div class="space-y-2 mb-8">
+        <h2 class="text-2xl font-serif font-black text-navy-900">Welcome / مرحباً بك</h2>
+        <p class="text-sm text-slate-500">Please select your preferred language to view the CV</p>
+        <p class="text-xs text-slate-400">يرجى اختيار اللغة المفضلة لعرض السيرة الذاتية</p>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-4">
+        <!-- English Selector Button -->
+        <button onclick="setLanguage('en')" class="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 hover:border-accent-blue bg-slate-50 hover:bg-blue-50/50 transition-all duration-200 group">
+          <span class="w-10 h-10 rounded-full bg-blue-100 text-accent-blue flex items-center justify-center mb-2 font-bold group-hover:scale-110 transition-transform">EN</span>
+          <span class="font-semibold text-navy-900">English</span>
+          <span class="text-[10px] text-slate-400">Left-to-Right layout</span>
+        </button>
+        
+        <!-- Arabic Selector Button -->
+        <button onclick="setLanguage('ar')" class="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-slate-200 hover:border-accent-teal bg-slate-50 hover:bg-teal-50/50 transition-all duration-200 group font-cairo">
+          <span class="w-10 h-10 rounded-full bg-teal-100 text-accent-teal flex items-center justify-center mb-2 font-bold group-hover:scale-110 transition-transform">عربي</span>
+          <span class="font-bold text-navy-900">العربية</span>
+          <span class="text-[10px] text-slate-400">تنسيق من اليمين لليسار</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING LANGUAGE SWITCHER ================= -->
+  <div class="no-print fixed bottom-6 right-6 z-40">
+    <button onclick="toggleLanguage()" class="w-14 h-14 rounded-full bg-navy-900 hover:bg-navy-800 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 border border-slate-700/50" title="Switch Language / تغيير اللغة">
+      <i class="fa-solid fa-globe text-xl text-teal-300"></i>
+    </button>
+  </div>
+
+
+  <!-- ============================================================= -->
+  <!-- ===================== ENGLISH VERSION ======================= -->
+  <!-- ============================================================= -->
+  <div id="cv-en" class="hidden">
+    <!-- Navbar / Action Bar -->
+    <nav class="no-print bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 transition-all duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-navy-900 to-accent-blue flex items-center justify-center text-white font-serif font-bold text-sm">
+            Y
+          </div>
+          <span class="font-serif font-bold text-navy-900 tracking-wide">Youmna Talaat</span>
+        </div>
+        <div class="flex items-center">
+          <a href="https://wa.me/201006899285" target="_blank" rel="noopener noreferrer" class="flex items-center bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
+            <i class="fa-brands fa-whatsapp text-lg mr-2.5"></i>
+            <span class="hidden sm:inline">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CV Wrapper Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 print-margin-none">
+      
+      <!-- Hero / Top Profile Card -->
+      <header class="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white rounded-2xl shadow-xl p-8 md:p-10 mb-8 relative overflow-hidden print-shadow-none print-border print:text-black print:bg-none print:bg-white print:p-6 print:rounded-none animate-fade-in-up">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-accent-teal/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none no-print"></div>
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 print-w-full">
+          <div>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent-teal/20 text-teal-300 border border-accent-teal/30 mb-3 no-print">
+              <i class="fa-solid fa-graduation-cap mr-1.5"></i> Sharia & Islamic Studies
+            </span>
+            <h1 class="text-3xl md:text-5xl font-serif font-black tracking-tight mb-2 print:text-3xl print:text-navy-900">
+              Youmna Sherif Talaat
+            </h1>
+            <p class="text-xl md:text-2xl font-sans font-medium text-blue-300 tracking-wide flex items-center print:text-lg print:text-blue-800">
+              <span class="w-2 h-2 bg-accent-teal rounded-full mr-2.5 no-print animate-pulse"></span>
+              Quran & Tajweed Tutor
+            </p>
+          </div>
+        </div>
+        <div class="h-[1px] bg-slate-700/60 my-6 print:bg-slate-300"></div>
+        <div class="print-w-full">
+          <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2 flex items-center print:text-navy-900">
+            <i class="fa-solid fa-user-check mr-2 text-accent-teal print:hidden"></i> Professional Summary
+          </h3>
+          <p class="text-slate-200 text-sm md:text-base leading-relaxed font-normal max-w-4xl print:text-slate-800">
+            A dedicated and passionate student at the College of Sharia and Islamic Studies, majoring in Aqeedah and Da'wah with a minor in English. Aiming to leverage my educational background, Nooraniyyah licenses, and online teaching experience to contribute positively in a professional academic environment.
+          </p>
+        </div>
+      </header>
+
+      <!-- Two-Column Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 print-grid-cols-2">
+        
+        <!-- SIDEBAR -->
+        <aside class="space-y-8 lg:col-span-1 print-w-full">
+          
+          <!-- Profile Card -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 flex flex-col items-center text-center page-break-avoid print-shadow-none print-border animate-fade-in-up delay-100">
+            <div class="relative group mb-4">
+              <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-navy-50 shadow-inner bg-slate-100 flex items-center justify-center">
+                <img src="Pic/profile.jpg" alt="Youmna Sherif Talaat" 
+                     onerror="this.style.display='none'; document.getElementById('profile-placeholder-en').style.display='flex';"
+                     class="w-full h-full object-cover">
+                <div id="profile-placeholder-en" class="hidden w-full h-full bg-gradient-to-br from-navy-950 to-navy-800 flex-col items-center justify-center text-white">
+                  <span class="text-3xl font-serif font-black">YT</span>
+                  <span class="text-[9px] uppercase tracking-wider text-slate-400 mt-1">Profile Photo</span>
+                </div>
+              </div>
+              <div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-navy-950 text-white flex items-center justify-center text-xs shadow-md border border-white no-print" title="Place 'profile.jpg' in 'Pic' directory to display photo">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+            </div>
+            <h2 class="text-lg font-serif font-bold text-navy-900">Youmna Sherif Talaat</h2>
+            <p class="text-xs text-slate-500 font-medium">Aqeedah & Da'wah student</p>
+            <div class="w-full h-[1px] bg-slate-100 my-4"></div>
+            <div class="grid grid-cols-2 gap-4 w-full text-left text-xs">
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 print:bg-white">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide font-bold">GPA</span>
+                <span class="text-navy-900 font-bold text-sm">3.52 / 4.00</span>
+              </div>
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 print:bg-white">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide font-bold">Nationality</span>
+                <span class="text-navy-900 font-bold text-sm">Egyptian</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 page-break-avoid print-shadow-none print-border animate-fade-in-up delay-200">
+            <h3 class="text-sm uppercase tracking-widest text-navy-900 font-serif font-black border-b border-slate-100 pb-3 mb-4 flex items-center">
+              <i class="fa-solid fa-address-book mr-2.5 text-accent-blue"></i> Contact Details
+            </h3>
+            <ul class="space-y-3.5 text-sm">
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 mr-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-brands fa-whatsapp text-emerald-600 print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">WhatsApp</span>
+                  <a href="https://wa.me/201006899285" target="_blank" rel="noopener noreferrer" class="font-medium text-slate-800 hover:text-accent-blue">
+                    +20 100 689 9285
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 mr-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-solid fa-phone text-accent-blue print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">Phone (Local)</span>
+                  <a href="tel:+96555055571" class="font-medium text-slate-800 hover:text-accent-blue">
+                    +965 55055571
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 mr-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-solid fa-envelope text-accent-blue print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">Email</span>
+                  <a href="mailto:youmnasherif2003@gmail.com" class="font-medium text-slate-800 hover:text-accent-blue select-all">
+                    youmnasherif2003@gmail.com
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 mr-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-solid fa-location-dot text-rose-500 print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">Location</span>
+                  <span class="font-medium text-slate-800">Kuwait City, Kuwait</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skills -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 page-break-avoid print-shadow-none print-border animate-fade-in-up delay-300">
+            <h3 class="text-sm uppercase tracking-widest text-navy-900 font-serif font-black border-b border-slate-100 pb-3 mb-4 flex items-center">
+              <i class="fa-solid fa-sliders mr-2.5 text-accent-blue"></i> Key Skills
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2">Languages</h4>
+                <div class="space-y-2">
+                  <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1">
+                      <span>Arabic (Native)</span>
+                      <span class="text-accent-blue">100%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div class="bg-navy-900 h-full rounded-full" style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1">
+                      <span>English (Intermediate/Advanced)</span>
+                      <span class="text-accent-blue">85%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div class="bg-navy-700 h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2.5">Quran & Islamic Education</h4>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">Online Teaching</span>
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">E-Learning Platforms</span>
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">Educational Games</span>
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">AI in Education</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2.5">Technical Tools</h4>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-50 text-slate-700 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">Microsoft Office</span>
+                  <span class="bg-slate-50 text-slate-700 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">Canva Design</span>
+                  <span class="bg-slate-50 text-slate-700 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">GoodNotes</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2.5">Professional Qualities</h4>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-teal-50 text-teal-800 text-xs px-2.5 py-1 rounded-md border border-teal-100/50 font-medium print:bg-white print:border">Strong Communication</span>
+                  <span class="bg-teal-50 text-teal-800 text-xs px-2.5 py-1 rounded-md border border-teal-100/50 font-medium print:bg-white print:border">Time Management</span>
+                  <span class="bg-teal-50 text-teal-800 text-xs px-2.5 py-1 rounded-md border border-teal-100/50 font-medium print:bg-white print:border">Individualized Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN COLUMN -->
+        <section class="space-y-8 lg:col-span-2 print-w-full">
+          
+          <!-- Experience -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 print-shadow-none print-border animate-fade-in-up delay-150">
+            <h3 class="text-lg font-serif font-black text-navy-900 border-b border-slate-100 pb-3 mb-6 flex items-center">
+              <i class="fa-solid fa-briefcase mr-3 text-accent-blue"></i> Professional Experience
+            </h3>
+            <div class="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100">
+              <div class="relative pl-8 group page-break-avoid">
+                <div class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-blue border-2 border-white ring-4 ring-blue-50"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h4 class="font-serif font-bold text-navy-900 text-base">Online Quran and Tajweed Tutor</h4>
+                  <span class="inline-flex items-center text-xs font-semibold text-accent-blue bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full sm:mt-0 mt-1 self-start print:bg-white print:border print:text-black">
+                    Oct 2023 - Present
+                  </span>
+                </div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Self-Employed / Online</p>
+                <ul class="space-y-2 text-sm text-slate-600 list-disc list-outside pl-4">
+                  <li>Provided individualized support to non-Arabic speaking students across all age groups.</li>
+                  <li>Taught Quran recitation, Tajweed rules, and Nooraniyyah / Noor Al-Bayan reading methodologies.</li>
+                  <li>Instructed Tajweed levels 1 and 2 in both Arabic and English language mediums.</li>
+                </ul>
+              </div>
+              <div class="relative pl-8 group page-break-avoid">
+                <div class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-teal border-2 border-white ring-4 ring-teal-50"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h4 class="font-serif font-bold text-navy-900 text-base">Quran Tutor & Evaluator</h4>
+                  <span class="inline-flex items-center text-xs font-semibold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full sm:mt-0 mt-1 self-start print:bg-white print:border print:text-black">
+                    2 Years Experience
+                  </span>
+                </div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Mabarrat Al-Mutamaizeen & Kuwait University</p>
+                <ul class="space-y-2 text-sm text-slate-600 list-disc list-outside pl-4">
+                  <li>Worked as a memorization tutor at Kuwait University (Islamic Economics Club).</li>
+                  <li>Served as an early childhood and primary stages teacher at Mabarrat Al-Mutamaizeen (Kuwait) for 2 years.</li>
+                </ul>
+              </div>
+              <div class="relative pl-8 group page-break-avoid">
+                <div class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-400 border-2 border-white ring-4 ring-slate-100"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h4 class="font-serif font-bold text-navy-900 text-base">Takhreej Library Assistant</h4>
+                  <span class="inline-flex items-center text-xs font-semibold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full sm:mt-0 mt-1 self-start print:bg-white print:border print:text-black">
+                    1 Year Experience
+                  </span>
+                </div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Faculty of Sharia, Kuwait University</p>
+                <ul class="space-y-2 text-sm text-slate-600 list-disc list-outside pl-4">
+                  <li>Assisted in organizing and classifying booklets and resource materials alongside the Six Books of Hadith (Al-Kutub al-Sittah).</li>
+                  <li>Maintained inventory tables, sorted volumes, and performed audits to identify missing texts under the supervision of Dr. Sondos Al-Obaid (Doctor of Tafsir and Hadith).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 print-shadow-none print-border page-break-avoid animate-fade-in-up delay-250">
+            <h3 class="text-lg font-serif font-black text-navy-900 border-b border-slate-100 pb-3 mb-6 flex items-center">
+              <i class="fa-solid fa-graduation-cap mr-3 text-accent-blue"></i> Education
+            </h3>
+            <div class="space-y-6">
+              <div class="group border-l-2 border-accent-blue pl-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-1.5">
+                  <h4 class="font-serif font-bold text-navy-900 text-base">Bachelor's Degree in Sharia & Islamic Studies</h4>
+                  <span class="text-xs font-bold text-accent-teal uppercase tracking-wide">GPA: 3.52 / 4.00 (Excellent)</span>
+                </div>
+                <p class="text-sm font-semibold text-slate-700">Kuwait University</p>
+                <p class="text-xs text-slate-500 mt-1">
+                  <strong>Major:</strong> Aqeedah and Da'wah | <strong>Minor:</strong> English Language and Literature
+                </p>
+              </div>
+              <div class="group border-l-2 border-slate-300 pl-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-1.5">
+                  <h4 class="font-serif font-bold text-navy-900 text-base">High School Diploma</h4>
+                  <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Grade: 98.41%</span>
+                </div>
+                <p class="text-sm font-semibold text-slate-700">Religious Institute (State of Kuwait)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Licenses -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 print-shadow-none print-border page-break-avoid animate-fade-in-up delay-350">
+            <h3 class="text-lg font-serif font-black text-navy-900 border-b border-slate-100 pb-3 mb-6 flex items-center">
+              <i class="fa-solid fa-certificate mr-3 text-accent-blue"></i> Certifications & Licenses
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 print-grid-cols-2">
+              <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-accent-blue font-bold border-b border-slate-100 pb-1.5">
+                  Quran & Tajweed Licenses
+                </h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Quran Memorization Certification</span>
+                      <span class="text-xs text-slate-500">Awqaf Circles & Dar Al-Atrujah</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Advanced Nooraniyyah License</span>
+                      <span class="text-xs text-slate-500">Furqan Group (93% Excellent)</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Developed Nooraniyyah License</span>
+                      <span class="text-xs text-slate-500">Kunooz Al-Quran (99% Excellent)</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Noor Al-Bayan License</span>
+                      <span class="text-xs text-slate-500">88% Very Good grade</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-accent-teal font-bold border-b border-slate-100 pb-1.5">
+                  Academic & Sharia Training
+                </h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Ejaza in Tohfat Al-Atfal</span>
+                      <span class="text-xs text-slate-500">Traditional Text of Tajweed Recitation</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">English Tajweed Rules Course</span>
+                      <span class="text-xs text-slate-500">Taybah Academy</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Mafateeh Al-Talab</span>
+                      <span class="text-xs text-slate-500">Dr. Othman Al-Kamees</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">Al-Qawaid Al-Muthla Course</span>
+                      <span class="text-xs text-slate-500">Dr. Dhari Al-Zahamil (Kuwait University)</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PORTFOLIO SECTION -->
+      <section class="mt-12 bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 no-print page-break-avoid animate-fade-in-up delay-400">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-4 mb-6 gap-4">
+          <div>
+            <h3 class="text-lg font-serif font-black text-navy-900 flex items-center">
+              <i class="fa-solid fa-images mr-3 text-accent-blue"></i> Attached Credentials Portfolio
+            </h3>
+            <p class="text-xs text-slate-500 mt-1">Interactive credentials library. Click any document card to expand and inspect detailed certification files.</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase">View Mode:</span>
+            <span class="text-xs font-bold text-accent-blue bg-blue-50 border border-blue-100 px-3 py-1 rounded-md">
+              19 Files Attached
+            </span>
+          </div>
+        </div>
+        <div id="certificate-grid-en" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-12 text-center text-xs text-slate-400 no-print border-t border-slate-200/60 pt-6 pb-4">
+        <p>© 2026 Youmna Sherif Talaat. Built with HTML, Tailwind CSS, and FontAwesome.</p>
+      </footer>
+    </main>
+  </div>
+
+
+  <!-- ============================================================= -->
+  <!-- ===================== ARABIC VERSION ======================== -->
+  <!-- ============================================================= -->
+  <div id="cv-ar" class="hidden font-cairo" dir="rtl">
+    <!-- Navbar / Action Bar -->
+    <nav class="no-print bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 transition-all duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2 space-x-reverse">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-navy-900 to-accent-teal flex items-center justify-center text-white font-amiri font-bold text-lg">
+            ي
+          </div>
+          <span class="font-amiri font-bold text-navy-900 tracking-wide text-xl">يمنى طلعت</span>
+        </div>
+        <div class="flex items-center">
+          <a href="https://wa.me/201006899285" target="_blank" rel="noopener noreferrer" class="flex items-center bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
+            <i class="fa-brands fa-whatsapp text-lg ml-2.5"></i>
+            <span>واتساب</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CV Wrapper Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 print-margin-none">
+      
+      <!-- Hero / Top Profile Card -->
+      <header class="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white rounded-2xl shadow-xl p-8 md:p-10 mb-8 relative overflow-hidden print-shadow-none print-border print:text-black print:bg-none print:bg-white print:p-6 print:rounded-none animate-fade-in-up">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-accent-teal/10 rounded-full blur-3xl -ml-16 -mt-16 pointer-events-none no-print"></div>
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 print-w-full">
+          <div>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent-teal/20 text-teal-300 border border-accent-teal/30 mb-3 no-print">
+              <i class="fa-solid fa-graduation-cap ml-1.5"></i> الشريعة والدراسات الإسلامية
+            </span>
+            <h1 class="text-3xl md:text-5xl font-amiri font-black tracking-tight mb-2 print:text-3xl print:text-navy-900">
+              يمنى شريف طلعت
+            </h1>
+            <p class="text-xl md:text-2xl font-cairo font-semibold text-teal-300 tracking-wide flex items-center print:text-lg print:text-blue-800">
+              <span class="w-2 h-2 bg-accent-teal rounded-full ml-2.5 no-print animate-pulse"></span>
+              معلمة قرآن كريم وتجويد
+            </p>
+          </div>
+        </div>
+        <div class="h-[1px] bg-slate-700/60 my-6 print:bg-slate-300"></div>
+        <div class="print-w-full">
+          <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2 flex items-center print:text-navy-900 font-cairo">
+            <i class="fa-solid fa-user-check ml-2 text-accent-teal print:hidden"></i> الملخص المهني
+          </h3>
+          <p class="text-slate-200 text-sm md:text-base leading-relaxed font-normal max-w-4xl print:text-slate-800 font-cairo">
+            طالبة شغوفة ومتميزة في كلية الشريعة والدراسات الإسلامية، تخصص عقيدة ودعوة ومساند لغة إنجليزية. أسعى لاستغلال خلفيتي التعليمية، ورخص القاعدة النورانية، وخبرتي في التدريس الإلكتروني للمساهمة الإيجابية في بيئة أكاديمية مهنية.
+          </p>
+        </div>
+      </header>
+
+      <!-- Two-Column Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 print-grid-cols-2">
+        
+        <!-- SIDEBAR -->
+        <aside class="space-y-8 lg:col-span-1 print-w-full">
+          
+          <!-- Profile Card -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 flex flex-col items-center text-center page-break-avoid print-shadow-none print-border animate-fade-in-up delay-100">
+            <div class="relative group mb-4">
+              <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-navy-50 shadow-inner bg-slate-100 flex items-center justify-center">
+                <img src="Pic/profile.jpg" alt="يمنى شريف طلعت" 
+                     onerror="this.style.display='none'; document.getElementById('profile-placeholder-ar').style.display='flex';"
+                     class="w-full h-full object-cover">
+                <div id="profile-placeholder-ar" class="hidden w-full h-full bg-gradient-to-br from-navy-950 to-navy-800 flex-col items-center justify-center text-white">
+                  <span class="text-3xl font-amiri font-black">ي</span>
+                  <span class="text-[9px] uppercase tracking-wider text-slate-400 mt-1 font-cairo">الصورة الشخصية</span>
+                </div>
+              </div>
+              <div class="absolute -bottom-1 -left-1 w-8 h-8 rounded-full bg-navy-900 text-white flex items-center justify-center text-xs shadow-md border border-white no-print" title="ضع ملف 'profile.jpg' في مجلد 'Pic' لعرض صورتك">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+            </div>
+            <h2 class="text-xl font-cairo font-bold text-navy-900">يمنى شريف طلعت</h2>
+            <p class="text-xs text-slate-500 font-medium">طالبة عقيدة ودعوة</p>
+            <div class="w-full h-[1px] bg-slate-100 my-4"></div>
+            <div class="grid grid-cols-2 gap-4 w-full text-right text-xs">
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 print:bg-white">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide font-bold">المعدل</span>
+                <span class="text-navy-900 font-bold text-sm">3.52 / 4.00</span>
+              </div>
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 print:bg-white">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide font-bold">الجنسية</span>
+                <span class="text-navy-900 font-bold text-sm">مصرية</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 page-break-avoid print-shadow-none print-border animate-fade-in-up delay-200">
+            <h3 class="text-sm uppercase tracking-widest text-navy-900 font-cairo font-black border-b border-slate-100 pb-3 mb-4 flex items-center">
+              <i class="fa-solid fa-address-book ml-2.5 text-accent-teal"></i> بيانات الاتصال
+            </h3>
+            <ul class="space-y-3.5 text-sm">
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 ml-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-brands fa-whatsapp text-emerald-600 print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">واتساب</span>
+                  <a href="https://wa.me/201006899285" target="_blank" rel="noopener noreferrer" class="font-medium text-slate-800 hover:text-accent-teal">
+                    +20 100 689 9285
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 ml-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-solid fa-phone text-accent-blue print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">رقم الهاتف (الكويت)</span>
+                  <a href="tel:+96555055571" class="font-medium text-slate-800 hover:text-accent-teal">
+                    +965 55055571
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 ml-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-solid fa-envelope text-accent-blue print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">البريد الإلكتروني</span>
+                  <a href="mailto:youmnasherif2003@gmail.com" class="font-medium text-slate-800 hover:text-accent-teal select-all">
+                    youmnasherif2003@gmail.com
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center text-navy-900 ml-3 shrink-0 print:bg-none print:w-auto">
+                  <i class="fa-solid fa-location-dot text-rose-500 print:text-black"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-400 uppercase font-bold">الموقع</span>
+                  <span class="font-medium text-slate-800">مدينة الكويت، الكويت</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skills -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 page-break-avoid print-shadow-none print-border animate-fade-in-up delay-300">
+            <h3 class="text-sm uppercase tracking-widest text-navy-900 font-cairo font-black border-b border-slate-100 pb-3 mb-4 flex items-center">
+              <i class="fa-solid fa-sliders ml-2.5 text-accent-teal"></i> المهارات الأساسية
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2">اللغات</h4>
+                <div class="space-y-2">
+                  <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1">
+                      <span>العربية (اللغة الأم)</span>
+                      <span class="text-accent-teal">100%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div class="bg-navy-900 h-full rounded-full" style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1">
+                      <span>الإنجليزية (متوسط/متقدم)</span>
+                      <span class="text-accent-teal">85%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div class="bg-navy-700 h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2.5">تعليم القرآن والدراسات الإسلامية</h4>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">التدريس عبر الإنترنت</span>
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">منصات التعليم الإلكتروني</span>
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">الألعاب التعليمية الرقمية</span>
+                  <span class="bg-navy-50 text-navy-900 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">الذكاء الاصطناعي في التعليم</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2.5">الأدوات التقنية</h4>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-50 text-slate-700 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">مايكروسوفت أوفيس</span>
+                  <span class="bg-slate-50 text-slate-700 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">تصميم كانفا (Canva)</span>
+                  <span class="bg-slate-50 text-slate-700 text-xs px-2.5 py-1 rounded-md border border-slate-100 font-medium print:bg-white print:border">برنامج GoodNotes</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wide mb-2.5">الصفات والمهارات الشخصية</h4>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-teal-50 text-teal-800 text-xs px-2.5 py-1 rounded-md border border-teal-100/50 font-medium print:bg-white print:border">التواصل الفعّال والدائم</span>
+                  <span class="bg-teal-50 text-teal-800 text-xs px-2.5 py-1 rounded-md border border-teal-100/50 font-medium print:bg-white print:border">تنظيم الوقت وإدارته</span>
+                  <span class="bg-teal-50 text-teal-800 text-xs px-2.5 py-1 rounded-md border border-teal-100/50 font-medium print:bg-white print:border">الدعم التعليمي الفردي</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN COLUMN -->
+        <section class="space-y-8 lg:col-span-2 print-w-full">
+          
+          <!-- Experience -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 print-shadow-none print-border animate-fade-in-up delay-150">
+            <h3 class="text-lg font-cairo font-black text-navy-900 border-b border-slate-100 pb-3 mb-6 flex items-center">
+              <i class="fa-solid fa-briefcase ml-3 text-accent-teal"></i> الخبرات المهنية
+            </h3>
+            <div class="space-y-8 relative before:absolute before:right-3 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100">
+              <div class="relative pr-8 group page-break-avoid">
+                <div class="absolute right-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-teal border-2 border-white ring-4 ring-teal-50"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h4 class="font-cairo font-bold text-navy-900 text-base">معلمة قرآن كريم وتجويد عبر الإنترنت</h4>
+                  <span class="inline-flex items-center text-xs font-semibold text-accent-teal bg-teal-50 border border-teal-100 px-2.5 py-1 rounded-full sm:mt-0 mt-1 self-start print:bg-white print:border print:text-black">
+                    أكتوبر 2023 - الحالي
+                  </span>
+                </div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">عمل حر عبر الإنترنت</p>
+                <ul class="space-y-2 text-sm text-slate-600 list-disc list-outside pr-4">
+                  <li>تقديم الدعم الفردي للطلاب غير الناطقين باللغة العربية لمختلف الفئات العمرية.</li>
+                  <li>تعليم تلاوة القرآن الكريم، وأحكام التجويد، والقاعدة النورانية، ومنهجية نور البيان.</li>
+                  <li>تدريس مستويات التجويد الأول والثاني باللغتين العربية والإنجليزية.</li>
+                </ul>
+              </div>
+              <div class="relative pr-8 group page-break-avoid">
+                <div class="absolute right-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-blue border-2 border-white ring-4 ring-blue-50"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h4 class="font-cairo font-bold text-navy-900 text-base">معلمة ومقيمة قرآن كريم</h4>
+                  <span class="inline-flex items-center text-xs font-semibold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full sm:mt-0 mt-1 self-start print:bg-white print:border print:text-black">
+                    خبرة سنتين
+                  </span>
+                </div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">جامعة الكويت (نادي الاقتصاد الإسلامي) ومبرة المتميزين لخدمة القرآن</p>
+                <ul class="space-y-2 text-sm text-slate-600 list-disc list-outside pr-4">
+                  <li>العمل كمعلمة تحفيظ وتقييم بموقع جامعة الكويت (نادي الاقتصاد الإسلامي).</li>
+                  <li>التدريس لدى مبرة المتميزين (الكويت) للمرحلتين التأسيسية والابتدائية.</li>
+                </ul>
+              </div>
+              <div class="relative pr-8 group page-break-avoid">
+                <div class="absolute right-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-400 border-2 border-white ring-4 ring-slate-100"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h4 class="font-cairo font-bold text-navy-900 text-base">مساعدة بمكتبة التخريج</h4>
+                  <span class="inline-flex items-center text-xs font-semibold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full sm:mt-0 mt-1 self-start print:bg-white print:border print:text-black">
+                    مدة سنة
+                  </span>
+                </div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">كلية الشريعة والدراسات الإسلامية بجامعة الكويت</p>
+                <ul class="space-y-2 text-sm text-slate-600 list-disc list-outside pr-4">
+                  <li>المساعدة في مكتبة التخريج من حيث الترتيب وتصنيف كل كتيب مع مجموعته من الكتب الستة وغيرها.</li>
+                  <li>عمل الجداول وفرز الكتب وإحصاء الكتب الناقصة لحصرها داخل المكتبة تحت إشراف دكتورة التفسير والحديث (سندس العبيد).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 print-shadow-none print-border page-break-avoid animate-fade-in-up delay-250">
+            <h3 class="text-lg font-cairo font-black text-navy-900 border-b border-slate-100 pb-3 mb-6 flex items-center">
+              <i class="fa-solid fa-graduation-cap ml-3 text-accent-teal"></i> التعليم الأكاديمي
+            </h3>
+            <div class="space-y-6">
+              <div class="group border-r-2 border-accent-teal pr-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-1.5">
+                  <h4 class="font-cairo font-bold text-navy-900 text-base">درجة البكالوريوس في الشريعة والدراسات الإسلامية</h4>
+                  <span class="text-xs font-bold text-accent-teal uppercase tracking-wide">التقدير: ممتاز (المعدل: 3.52 / 4.00)</span>
+                </div>
+                <p class="text-sm font-semibold text-slate-700">جامعة الكويت</p>
+                <p class="text-xs text-slate-500 mt-1">
+                  <strong>التخصص الرئيسي:</strong> العقيدة والدعوة | <strong>التخصص المساند:</strong> اللغة الإنجليزية وآدابها
+                </p>
+              </div>
+              <div class="group border-r-2 border-slate-300 pr-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-1.5">
+                  <h4 class="font-cairo font-bold text-navy-900 text-base">شهادة الثانوية العامة</h4>
+                  <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">النسبة المئوية: 98.41%</span>
+                </div>
+                <p class="text-sm font-semibold text-slate-700">المعهد الديني (دولة الكويت)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Licenses -->
+          <div class="bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 print-shadow-none print-border page-break-avoid animate-fade-in-up delay-350">
+            <h3 class="text-lg font-cairo font-black text-navy-900 border-b border-slate-100 pb-3 mb-6 flex items-center">
+              <i class="fa-solid fa-certificate ml-3 text-accent-teal"></i> الشهادات التخصصية والرخص
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 print-grid-cols-2">
+              <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-accent-teal font-bold border-b border-slate-100 pb-1.5">
+                  رخص القرآن الكريم والتجويد
+                </h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">حفظ القرآن الكريم كاملاً</span>
+                      <span class="text-xs text-slate-500">حلقات الأوقاف ودار الأترجة</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">رخصة القاعدة النورانية الفتحية المتقدمة</span>
+                      <span class="text-xs text-slate-500">مجموعة الفرقان (بتقدير ممتاز 93%)</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">رخصة القاعدة النورانية المطورة</span>
+                      <span class="text-xs text-slate-500">كنوز القرآن (بتقدير ممتاز 99%)</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 mr-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">رخصة نور البيان لتعليم القراءة</span>
+                      <span class="text-xs text-slate-500">بتقدير جيد جداً بنسبة 88%</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-accent-blue font-bold border-b border-slate-100 pb-1.5">
+                  الدورات العلمية والشرعية
+                </h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">إجازة في متن تحفة الأطفال</span>
+                      <span class="text-xs text-slate-500">في أحكام تجويد تلاوة القرآن</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">دورة قواعد التجويد باللغة الإنجليزية</span>
+                      <span class="text-xs text-slate-500">أكاديمية طيبة لعلوم القرآن</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">برنامج مفاتيح الطلب العلمية</span>
+                      <span class="text-xs text-slate-500">تحت إشراف فضيلة الشيخ د. عثمان الخميس</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-regular fa-square-check text-emerald-600 mt-1 ml-2 shrink-0"></i>
+                    <div>
+                      <span class="font-semibold block text-navy-900">دورة شرح القواعد المثلى</span>
+                      <span class="text-xs text-slate-500">د. ضاري الزحاميل (جامعة الكويت)</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PORTFOLIO SECTION -->
+      <section class="mt-12 bg-white rounded-xl shadow-md border border-slate-100 p-6 md:p-8 no-print page-break-avoid animate-fade-in-up delay-400">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-4 mb-6 gap-4">
+          <div>
+            <h3 class="text-lg font-cairo font-black text-navy-900 flex items-center">
+              <i class="fa-solid fa-images ml-3 text-accent-teal"></i> معرض الوثائق والشهادات المرفقة
+            </h3>
+            <p class="text-xs text-slate-500 mt-1">مكتبة تفاعلية للشهادات. اضغط على أي شهادة لتكبيرها واستعراض تفاصيل الترخيص بشكل كامل.</p>
+          </div>
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <span class="text-xs font-semibold text-slate-400 uppercase">العرض:</span>
+            <span class="text-xs font-bold text-accent-teal bg-teal-50 border border-teal-100 px-3 py-1 rounded-md">
+              تم إرفاق ١٩ ملفاً
+            </span>
+          </div>
+        </div>
+        <div id="certificate-grid-ar" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-12 text-center text-xs text-slate-400 no-print border-t border-slate-200/60 pt-6 pb-4">
+        <p>© 2026 يمنى شريف طلعت. تم التطوير باستخدام HTML, Tailwind CSS, و FontAwesome.</p>
+      </footer>
+    </main>
+  </div>
+
+
+  <!-- ============================================================= -->
+  <!-- ================= LIGHTBOX MODAL VIEWER ===================== -->
+  <!-- ============================================================= -->
+  <div id="lightbox-modal" class="no-print fixed inset-0 z-50 hidden bg-navy-950/95 backdrop-blur-sm flex-col justify-between p-4 transition-all duration-300 opacity-0">
+    <!-- Top Action bar -->
+    <div class="flex items-center justify-between w-full max-w-6xl mx-auto py-2">
+      <div class="text-white text-sm font-semibold truncate pr-4 text-left">
+        <span class="text-slate-400 block text-[10px] uppercase font-bold tracking-wide" id="modal-label">Viewing Document</span>
+        <span id="modal-title" class="font-serif">Certificate Document</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <!-- Page Count indicator -->
+        <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
+          <span id="modal-index">1</span> / 19
+        </span>
+        <!-- Print single document -->
+        <button id="modal-print-btn" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors duration-150 border border-slate-700" title="Print this document">
+          <i class="fa-solid fa-print"></i>
+        </button>
+        <!-- Close button -->
+        <button id="close-modal" class="w-9 h-9 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-colors duration-150 shadow-md shadow-rose-600/10">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Center Display Area -->
+    <div class="relative flex items-center justify-center flex-1 w-full max-w-5xl mx-auto my-4 group">
+      <!-- Previous Arrow -->
+      <button id="prev-btn" class="absolute left-2 z-10 w-12 h-12 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center transition-all duration-200 border border-slate-700 opacity-60 hover:opacity-100 hover:scale-105" title="Previous Image">
+        <i class="fa-solid fa-chevron-left text-lg"></i>
+      </button>
+
+      <!-- Main Image Container -->
+      <div class="relative max-w-full max-h-[75vh] md:max-h-[80vh] flex items-center justify-center bg-navy-900/60 p-2.5 rounded-xl border border-slate-800/80 shadow-2xl">
+        <img id="modal-img" src="" alt="Certificate" class="max-w-full max-h-[72vh] md:max-h-[78vh] object-contain rounded-lg">
+      </div>
+
+      <!-- Next Arrow -->
+      <button id="next-btn" class="absolute right-2 z-10 w-12 h-12 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center transition-all duration-200 border border-slate-700 opacity-60 hover:opacity-100 hover:scale-105" title="Next Image">
+        <i class="fa-solid fa-chevron-right text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="w-full max-w-xl mx-auto text-center pb-4">
+      <p class="text-[10px] text-slate-400 mt-2" id="modal-keys-help"><i class="fa-solid fa-keyboard mr-1"></i> Use Left/Right Arrow keys to navigate, Esc to close</p>
+    </div>
+  </div>
+
+
+  <!-- ==================== WEB APP JAVASCRIPT ==================== -->
+  <script>
+    // Certificate List
+    const certificates = [
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 23.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 1", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ١" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 24.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 2", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ٢" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 25.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 3", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ٣" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 26.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 4", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ٤" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 27.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 5", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ٥" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 28.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 6", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ٦" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 29.jpg", titleEn: "Quran Memorization & Advanced Licenses - Pg 7", titleAr: "صفحة شهادة حفظ القرآن الكريم والإجازات المتقدمة - صفحة ٧" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 210.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 8", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ٨" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 211.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 9", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ٩" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 212.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 10", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٠" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 213.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 11", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١١" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 214.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 12", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٢" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 215.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 13", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٣" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 216.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 14", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٤" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 217.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 15", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٥" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 218.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 16", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٦" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 219.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 17", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٧" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 220.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 18", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٨" },
+      { filename: "سيرة ذاتية أزرق وكحلي بسيطة 221.jpg", titleEn: "Tajweed & Nooraniyyah Accreditations - Pg 19", titleAr: "شهادة رخص التجويد والنورانية والدورات - صفحة ١٩" }
+    ];
+
+    let currentLang = 'en';
+    let currentCertIndex = 0;
+    window.isEditingEnabled = false;
+
+    // Firebase configuration matching "كتاب التأسيس - مسموع" (audio-foundation-book)
+    const firebaseConfig = {
+      apiKey: "AIzaSyBzhGlkfBG3iob4NdkA5zPd3dRqNq4ju7g",
+      authDomain: "audio-foundation-book.firebaseapp.com",
+      projectId: "audio-foundation-book",
+      storageBucket: "audio-foundation-book.firebasestorage.app",
+      messagingSenderId: "132959327913",
+      appId: "1:132959327913:web:c92564d98fc635a73abbb8",
+      measurementId: "G-07PXFNVPYV"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Load active language and saved content on initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. First, start realtime sync with Firestore (loads local data first internally)
+      startRealtimeSync();
+      
+      // 2. Load preferred language
+      const savedLang = localStorage.getItem('youmna_cv_lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      } else {
+        // Show Selector Modal
+        document.getElementById('language-selector').style.display = 'flex';
+      }
+
+      // 3. Build grids only if they are not loaded/populated
+      const gridEn = document.getElementById('certificate-grid-en');
+      if (gridEn && gridEn.children.length === 0) {
+        buildGrids();
+      }
+
+      // 4. Check if Admin parameters are provided in URL
+      checkAdmin();
+    });
+
+    function startRealtimeSync() {
+      // Helper to strip any admin indicator spans from HTML
+      function cleanHTML(htmlStr) {
+        if (!htmlStr) return "";
+        const temp = document.createElement('div');
+        temp.innerHTML = htmlStr;
+        temp.querySelectorAll('span').forEach(span => {
+          if (span.textContent.includes('Admin Mode') || span.textContent.includes('وضع الإدارة')) {
+            span.remove();
+          }
+        });
+        return temp.innerHTML;
+      }
+
+      // Fast load from localStorage first for zero-latency load
+      const savedEn = cleanHTML(localStorage.getItem('youmna_cv_en_content'));
+      const savedAr = cleanHTML(localStorage.getItem('youmna_cv_ar_content'));
+      if (savedEn) document.getElementById('cv-en').innerHTML = savedEn;
+      if (savedAr) document.getElementById('cv-ar').innerHTML = savedAr;
+
+      // Sync and download the latest data from Cloud Firestore in real-time
+      try {
+        const docRef = db.collection("books").doc("youmna-cv");
+        docRef.onSnapshot((docSnap) => {
+          if (docSnap.exists) {
+            const data = docSnap.data();
+            if (data) {
+              // Only update DOM if the user is not actively editing text
+              const isUserEditing = document.activeElement && document.activeElement.contentEditable === "true";
+              if (!isUserEditing) {
+                const cleanedEn = cleanHTML(data.en);
+                const cleanedAr = cleanHTML(data.ar);
+
+                if (cleanedEn && document.getElementById('cv-en').innerHTML !== cleanedEn) {
+                  document.getElementById('cv-en').innerHTML = cleanedEn;
+                  localStorage.setItem('youmna_cv_en_content', cleanedEn);
+                }
+                if (cleanedAr && document.getElementById('cv-ar').innerHTML !== cleanedAr) {
+                  document.getElementById('cv-ar').innerHTML = cleanedAr;
+                  localStorage.setItem('youmna_cv_ar_content', cleanedAr);
+                }
+
+                // If remote data contained admin indicators, clean it up on Firebase
+                if (window.isEditingEnabled && (data.en !== cleanedEn || data.ar !== cleanedAr)) {
+                  docRef.set({
+                    en: cleanedEn,
+                    ar: cleanedAr,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                  }, { merge: true }).then(() => {
+                    console.log("Firestore document cleaned of admin indicators.");
+                  });
+                }
+              }
+            }
+          }
+        }, (e) => {
+          console.error("Failed to fetch edits from Firestore:", e);
+        });
+      } catch (e) {
+        console.error("Firestore snap listener failed:", e);
+      }
+    }
+
+    function saveEdits() {
+      const enCv = document.getElementById('cv-en');
+      const arCv = document.getElementById('cv-ar');
+      if (enCv) localStorage.setItem('youmna_cv_en_content', enCv.innerHTML);
+      if (arCv) localStorage.setItem('youmna_cv_ar_content', arCv.innerHTML);
+      
+      // Save online if we are logged in as admin
+      if (window.isEditingEnabled) {
+        saveEditsToFirebase();
+      }
+    }
+
+    async function saveEditsToFirebase() {
+      const enCv = document.getElementById('cv-en');
+      const arCv = document.getElementById('cv-ar');
+      const data = {
+        en: enCv ? enCv.innerHTML : "",
+        ar: arCv ? arCv.innerHTML : "",
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+      try {
+        const docRef = db.collection("books").doc("youmna-cv");
+        await docRef.set(data, { merge: true });
+        console.log("Saved successfully to Firestore under books/youmna-cv");
+      } catch (e) {
+        console.error("Firestore sync failed:", e);
+        alert("فشل حفظ التعديلات على السحابة: " + e.message);
+      }
+    }
+
+    async function resetEdits() {
+      const confirmMsg = (currentLang === 'en') 
+        ? 'Are you sure you want to reset all custom edits to the original default CV?'
+        : 'هل أنت متأكد من رغبتك في إعادة تعيين كافة التعديلات إلى السيرة الذاتية الأصلية؟';
+      
+      if (confirm(confirmMsg)) {
+        localStorage.removeItem('youmna_cv_en_content');
+        localStorage.removeItem('youmna_cv_ar_content');
+        
+        if (window.isEditingEnabled) {
+          try {
+            const docRef = db.collection("books").doc("youmna-cv");
+            await docRef.delete();
+          } catch(e) {
+            console.error("Failed to delete Firestore document:", e);
+            alert("فشل مسح البيانات من السحابة: " + e.message);
+          }
+        }
+        window.location.reload();
+      }
+    }
+
+    function downloadHTML() {
+      const docType = "<!DOCTYPE html>\n";
+      const htmlContent = docType + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'index.html';
+      a.click();
+    }
+
+    function checkAdmin() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('admin')) {
+        window.isEditingEnabled = true;
+      }
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('youmna_cv_lang', lang);
+      
+      // Hide selection screen
+      document.getElementById('language-selector').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('language-selector').style.display = 'none';
+      }, 500);
+
+      // Toggle CV Displays
+      const enCv = document.getElementById('cv-en');
+      const arCv = document.getElementById('cv-ar');
+      
+      if (lang === 'en') {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        enCv.classList.remove('hidden');
+        arCv.classList.add('hidden');
+        
+        // Modal static text updates
+        document.getElementById('modal-label').textContent = 'Viewing Document';
+        document.getElementById('modal-keys-help').innerHTML = '<i class="fa-solid fa-keyboard mr-1"></i> Use Left/Right Arrow keys to navigate, Esc to close';
+      } else {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        arCv.classList.remove('hidden');
+        enCv.classList.add('hidden');
+        
+        // Modal static text updates
+        document.getElementById('modal-label').textContent = 'عرض المستند المرفق';
+        document.getElementById('modal-keys-help').innerHTML = '<i class="fa-solid fa-keyboard mr-1"></i> استخدم الأسهم اليمين/اليسار للتنقل، وزر Esc للإغلاق';
+      }
+    }
+
+    function toggleLanguage() {
+      const newLang = (currentLang === 'en') ? 'ar' : 'en';
+      setLanguage(newLang);
+    }
+
+    // Build the Grid Cards for both English and Arabic
+    function buildGrids() {
+      const gridEn = document.getElementById('certificate-grid-en');
+      const gridAr = document.getElementById('certificate-grid-ar');
+      
+      gridEn.innerHTML = '';
+      gridAr.innerHTML = '';
+
+      certificates.forEach((cert, idx) => {
+        // EN Card
+        const cardEn = document.createElement('div');
+        cardEn.className = "group cursor-pointer relative bg-slate-50 border border-slate-200/60 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 flex flex-col";
+        cardEn.onclick = () => openLightbox(idx);
+        cardEn.innerHTML = `
+          <div class="aspect-[3/4] w-full bg-slate-100 overflow-hidden relative border-b border-slate-200/50 flex items-center justify-center">
+            <img src="Pic/${cert.filename}" alt="${cert.titleEn}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22140%22 viewBox=%220 0 100 140%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23f1f5f9%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%228%22 fill=%22%23475569%22>Certificate ${idx+1}</text></svg>'">
+            <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+              <span class="bg-white/90 text-navy-900 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1.5 rounded shadow flex items-center">
+                <i class="fa-solid fa-expand mr-1 text-accent-blue"></i> Expand
+              </span>
+            </div>
+          </div>
+          <div class="p-2 flex-grow flex flex-col justify-between">
+            <span class="text-[9px] uppercase tracking-wide text-accent-blue font-bold block">Document #${idx+1}</span>
+            <p class="text-[11px] font-medium text-slate-800 leading-snug line-clamp-2 mt-0.5" title="${cert.titleEn}">${cert.titleEn}</p>
+          </div>
+        `;
+        gridEn.appendChild(cardEn);
+
+        // AR Card
+        const cardAr = document.createElement('div');
+        cardAr.className = "group cursor-pointer relative bg-slate-50 border border-slate-200/60 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 flex flex-col font-cairo";
+        cardAr.onclick = () => openLightbox(idx);
+        cardAr.innerHTML = `
+          <div class="aspect-[3/4] w-full bg-slate-100 overflow-hidden relative border-b border-slate-200/50 flex items-center justify-center">
+            <img src="Pic/${cert.filename}" alt="${cert.titleAr}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22140%22 viewBox=%220 0 100 140%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23f1f5f9%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%228%22 fill=%22%23475569%22>Certificate ${idx+1}</text></svg>'">
+            <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+              <span class="bg-white/90 text-navy-900 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1.5 rounded shadow flex items-center">
+                <i class="fa-solid fa-expand ml-1 text-accent-teal"></i> تكبير
+              </span>
+            </div>
+          </div>
+          <div class="p-2 flex-grow flex flex-col justify-between">
+            <span class="text-[9px] uppercase tracking-wide text-accent-teal font-bold block">مستند رقم ${idx+1}</span>
+            <p class="text-[11px] font-semibold text-slate-800 leading-snug line-clamp-2 mt-0.5 font-cairo" title="${cert.titleAr}">${cert.titleAr}</p>
+          </div>
+        `;
+        gridAr.appendChild(cardAr);
+      });
+    }
+
+    // Lightbox Control JavaScript
+    const lightbox = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalIndex = document.getElementById('modal-index');
+    const closeModalBtn = document.getElementById('close-modal');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const modalPrintBtn = document.getElementById('modal-print-btn');
+
+    function openLightbox(index) {
+      currentCertIndex = index;
+      updateLightboxContent();
+      
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      
+      setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+        lightbox.classList.add('opacity-100');
+      }, 50);
+      
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('opacity-100');
+      lightbox.classList.add('opacity-0');
+      
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }, 300);
+      
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      const cert = certificates[currentCertIndex];
+      modalImg.src = `Pic/${cert.filename}`;
+      modalImg.alt = (currentLang === 'en') ? cert.titleEn : cert.titleAr;
+      modalTitle.textContent = (currentLang === 'en') ? cert.titleEn : cert.titleAr;
+      modalIndex.textContent = currentCertIndex + 1;
+    }
+
+    function showPrev() {
+      currentCertIndex = (currentCertIndex === 0) ? certificates.length - 1 : currentCertIndex - 1;
+      updateLightboxContent();
+    }
+
+    function showNext() {
+      currentCertIndex = (currentCertIndex === certificates.length - 1) ? 0 : currentCertIndex + 1;
+      updateLightboxContent();
+    }
+
+    // Print single certificate
+    modalPrintBtn.addEventListener('click', () => {
+      const win = window.open("", "_blank");
+      const cert = certificates[currentCertIndex];
+      win.document.write(`
+        <html>
+          <head>
+            <title>Print - ${cert.filename}</title>
+            <style>
+              body { margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; background-color: white; }
+              img { max-width: 100%; max-height: 100%; object-fit: contain; }
+              @media print {
+                body { margin: 0; }
+                img { width: 100vw; height: 100vh; object-fit: contain; page-break-after: always; }
+              }
+            </style>
+          </head>
+          <body>
+            <img src="Pic/${cert.filename}" onload="window.print(); window.close();">
+          </body>
+        </html>
+      `);
+      win.document.close();
+    });
+
+    closeModalBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+    
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+
+    // Double-click inline text editor
+    document.addEventListener('dblclick', function(e) {
+      // Only allow editing if Admin Mode is authorized and active
+      if (!window.isEditingEnabled) return;
+
+      // Avoid interactive elements, images, buttons, and elements inside modals/selector
+      if (
+        e.target.tagName === 'BUTTON' || 
+        e.target.tagName === 'A' || 
+        e.target.tagName === 'IMG' || 
+        e.target.tagName === 'INPUT' ||
+        e.target.closest('#lightbox-modal') || 
+        e.target.closest('#language-selector') ||
+        e.target.closest('nav') || // Avoid editing navbar links
+        e.target.classList.contains('no-edit')
+      ) {
+        return;
+      }
+      
+      const el = e.target;
+      
+      // Make element editable
+      el.contentEditable = "true";
+      el.focus();
+      
+      // Add a nice visual indicator
+      el.classList.add('ring-2', 'ring-accent-blue', 'outline-none', 'rounded', 'p-1', 'bg-blue-50/30', 'transition-all');
+      
+      // Disable edit mode and save on blur
+      el.addEventListener('blur', function() {
+        el.contentEditable = "false";
+        el.classList.remove('ring-2', 'ring-accent-blue', 'outline-none', 'rounded', 'p-1', 'bg-blue-50/30', 'transition-all');
+        saveEdits();
+      }, { once: true });
+      
+      // Submit edit on Enter (allow Shift+Enter for newlines)
+      el.addEventListener('keydown', function(evt) {
+        if (evt.key === 'Enter' && !evt.shiftKey) {
+          evt.preventDefault();
+          el.blur();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+=======
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
@@ -1424,3 +2879,4 @@
   </script>
 </body>
 </html>
+>>>>>>> 7dbee86268518a9a752787aaaf5567b4065a747b
